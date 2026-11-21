@@ -1,0 +1,582 @@
+{
+ "versi": "2026-11-21",
+ "dikemaskini": "2026-11-21",
+ "kategori": [
+  {
+   "id": "skill",
+   "nama": "Skill",
+   "warna": "#c2410c"
+  },
+  {
+   "id": "kuota",
+   "nama": "Kuota & konteks",
+   "warna": "#b91c1c"
+  },
+  {
+   "id": "prompt",
+   "nama": "Teknik prompt",
+   "warna": "#7c3aed"
+  },
+  {
+   "id": "projek",
+   "nama": "Projects & Context",
+   "warna": "#0f766e"
+  },
+  {
+   "id": "artifact",
+   "nama": "Artifact & halaman",
+   "warna": "#2563eb"
+  },
+  {
+   "id": "agent",
+   "nama": "Agent & automasi",
+   "warna": "#9333ea"
+  },
+  {
+   "id": "connector",
+   "nama": "Connector & aplikasi luar",
+   "warna": "#0e7490"
+  },
+  {
+   "id": "code",
+   "nama": "Claude Code",
+   "warna": "#4d7c0f"
+  },
+  {
+   "id": "lain",
+   "nama": "Alat AI lain",
+   "warna": "#64748b"
+  }
+ ],
+ "fokus": {
+  "minggu": "2026-11-21",
+  "ids": [
+   "t-humanizer",
+   "t-handoff",
+   "t-satu-chat"
+  ],
+  "nota": "Minggu pertama: cuba dua skill penulisan dan amalkan satu chat satu tugasan untuk kerja modul."
+ },
+ "tips": [
+  {
+   "id": "t-chat-panjang",
+   "tajuk": "Chat panjang menghabiskan kuota lebih cepat",
+   "kategori": "kuota",
+   "ringkasan": "Setiap kali mesej dihantar, Claude membaca semula keseluruhan perbualan dari mesej pertama. Semakin panjang chat, semakin mahal setiap mesej, walaupun soalannya pendek.",
+   "langkah": [
+    "Lihat chat yang paling panjang dan paling kerap anda guna.",
+    "Untuk tugasan baharu, buka chat baharu dan bandingkan berapa lama kuota bertahan."
+   ],
+   "kataKunci": [
+    "kuota",
+    "token",
+    "konteks (context)",
+    "had penggunaan"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude, 17 Nov 2026"
+    }
+   ],
+   "tarikh": "2026-11-17",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-padat",
+   "tajuk": "Pemadatan konteks boleh membuat Claude 'lupa' butiran",
+   "kategori": "kuota",
+   "ringkasan": "Apabila chat terlalu panjang, perbualan lama diringkaskan secara automatik (pemadatan / compaction). Ringkasan menjimatkan ruang, tetapi keputusan kecil, istilah atau isi fail yang pernah dibaca boleh tercicir.",
+   "langkah": [
+    "Jika Claude bertanya semula sesuatu yang sudah diputuskan, itu tanda konteks telah dipadatkan.",
+    "Simpan keputusan penting dalam fail Context, bukan hanya dalam chat."
+   ],
+   "kataKunci": [
+    "pemadatan (compaction)",
+    "ringkasan",
+    "ingatan"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude, 17 Nov 2026"
+    }
+   ],
+   "tarikh": "2026-11-17",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-cache",
+   "tajuk": "Mesej berturut-turut lebih murah daripada mesej selepas rehat lama",
+   "kategori": "kuota",
+   "ringkasan": "Bahagian perbualan yang sama disimpan sementara dalam cache, jadi mesej yang dihantar berturut-turut dalam masa singkat lebih jimat. Selepas rehat lama, cache luput dan semuanya dibaca semula pada kos penuh.",
+   "langkah": [
+    "Siapkan satu tugasan dalam satu sesi berterusan, jangan dipecah pagi dan petang dalam chat yang sama.",
+    "Jika perlu sambung esok, mulakan chat baharu dengan ringkasan."
+   ],
+   "kataKunci": [
+    "cache",
+    "prompt caching"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude, 17 Nov 2026"
+    }
+   ],
+   "tarikh": "2026-11-17",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-satu-chat",
+   "tajuk": "Satu chat untuk satu tugasan",
+   "kategori": "kuota",
+   "ringkasan": "Buka chat baharu bagi setiap tugasan dan tutup apabila siap. Konteks kekal kecil, kuota lebih jimat dan Claude kurang keliru dengan topik lain.",
+   "langkah": [
+    "Namakan chat ikut tugasan, contohnya 'Tutup jurang SP 2.1.1'.",
+    "Pada mesej pertama, muat naik fail terkini dan nyatakan tugasan dengan jelas.",
+    "Bila siap, minta Claude kemas kini fail Context jika ada keputusan baharu."
+   ],
+   "kataKunci": [
+    "amalan kerja",
+    "chat baharu"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude, 17 Nov 2026"
+    }
+   ],
+   "tarikh": "2026-11-17",
+   "semakan": "amalan"
+  },
+  {
+   "id": "t-context",
+   "tajuk": "Fail Context dalam Projects ialah ingatan kekal",
+   "kategori": "projek",
+   "ringkasan": "Fail yang dimuat naik ke Context sesebuah Projek dibaca oleh setiap chat dalam projek itu. Ia rujukan yang sentiasa terbuka, jadi chat baharu tidak bermula dari kosong.",
+   "langkah": [
+    "Buat satu Projek bagi setiap bidang kerja (contoh: Modul T5, Tips Claude).",
+    "Muat naik fail ringkasan keputusan dan status ke Context.",
+    "Mulakan chat dalam Projek itu, bukan di luar."
+   ],
+   "kataKunci": [
+    "Projects",
+    "Context",
+    "pengetahuan projek"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude, 17 Nov 2026"
+    }
+   ],
+   "tarikh": "2026-11-17",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-jangan-padam",
+   "tajuk": "Jangan padam fail Context; gantikan, jangan tambah pendua",
+   "kategori": "projek",
+   "ringkasan": "Jika fail Context dipadam, mesej lama dalam chat kekal tetapi mesej seterusnya tidak lagi boleh merujuknya. Dua versi fail yang berbeza pula boleh mengelirukan Claude.",
+   "langkah": [
+    "Simpan salinan fail Context dalam komputer atau Google Drive.",
+    "Bila ada keputusan baharu, padam versi lama dan muat naik versi terkini."
+   ],
+   "kataKunci": [
+    "Context",
+    "kemas kini fail"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude, 17 Nov 2026"
+    }
+   ],
+   "tarikh": "2026-11-17",
+   "semakan": "amalan"
+  },
+  {
+   "id": "t-handoff",
+   "tajuk": "Handoff: ringkasan sebelum meninggalkan chat panjang",
+   "kategori": "skill",
+   "ringkasan": "Skill handoff (Matt Pocock) menulis ringkasan perbualan supaya chat baharu boleh menyambung kerja. Tanpa skill pun, anda boleh meminta Claude membuat ringkasan yang sama.",
+   "langkah": [
+    "Pada akhir chat panjang, minta: 'Ringkaskan semua keputusan dan status projek ini dalam satu fail untuk Context.'",
+    "Muat naik fail itu ke Context Projek, kemudian mulakan chat baharu."
+   ],
+   "kataKunci": [
+    "handoff",
+    "ringkasan",
+    "Matt Pocock"
+   ],
+   "sumber": [
+    {
+     "jenis": "web",
+     "nama": "Claude Marketplaces: Matt Pocock's Skills",
+     "url": "https://claudemarketplaces.com/blog/matt-pocock-skills"
+    }
+   ],
+   "tarikh": "2026-11-21",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-grillme",
+   "tajuk": "Grill Me: Claude menyoal rancangan anda sehingga jelas",
+   "kategori": "skill",
+   "ringkasan": "Skill grill-me (Matt Pocock) membuat Claude menyoal anda satu demi satu tentang sesuatu rancangan, dengan jawapan cadangan bagi setiap soalan. Sesuai sebelum memulakan projek besar.",
+   "langkah": [
+    "Taip: 'grill me tentang rancangan …'.",
+    "Jawab 'ya' untuk menerima cadangan, atau beri jawapan sendiri.",
+    "Di akhir sesi, minta ringkasan persefahaman."
+   ],
+   "kataKunci": [
+    "grill-me",
+    "rancangan",
+    "soal jawab"
+   ],
+   "sumber": [
+    {
+     "jenis": "web",
+     "nama": "AI Hero: My Grill Me skill has gone viral",
+     "url": "https://www.aihero.dev/my-grill-me-skill-has-gone-viral"
+    }
+   ],
+   "tarikh": "2026-11-21",
+   "semakan": "sah",
+   "statusAwal": "cuba"
+  },
+  {
+   "id": "t-humanizer",
+   "tajuk": "Humanizer: buang gaya tulisan AI",
+   "kategori": "skill",
+   "ringkasan": "Skill humanizer (blader) menulis semula teks supaya tidak berbunyi seperti AI: membuang perkataan klise, gaya promosi dan format mekanikal. Berasaskan panduan Wikipedia 'Signs of AI writing'. Paling berkesan untuk teks Inggeris.",
+   "langkah": [
+    "Tampal satu perenggan laporan atau postingan, kemudian minta: 'guna humanizer pada teks ini'.",
+    "Bandingkan sebelum dan selepas; semak sama ada makna asal kekal."
+   ],
+   "kataKunci": [
+    "humanizer",
+    "penulisan",
+    "gaya AI"
+   ],
+   "sumber": [
+    {
+     "jenis": "web",
+     "nama": "blader/humanizer",
+     "url": "https://docsearch.algolia.com/mcp/docs/repo/blader/humanizer"
+    }
+   ],
+   "tarikh": "2026-11-21",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-skill-creator",
+   "tajuk": "Skill Creator: bina skill sendiri",
+   "kategori": "skill",
+   "ringkasan": "Skill rasmi Anthropic untuk membina, menguji dan memperbaiki skill. Cara kerja yang berulang boleh disimpan sebagai skill supaya Claude mengikutinya setiap kali.",
+   "langkah": [
+    "Selepas menyiapkan satu kerja berulang, minta: 'jadikan cara kerja ini sebagai skill'.",
+    "Semak kad cadangan skill, kemudian simpan."
+   ],
+   "kataKunci": [
+    "skill-creator",
+    "SKILL.md"
+   ],
+   "sumber": [
+    {
+     "jenis": "web",
+     "nama": "anthropics/skills (GitHub)",
+     "url": "https://github.com/anthropics/skills"
+    }
+   ],
+   "tarikh": "2026-11-21",
+   "semakan": "sah",
+   "statusAwal": "berguna"
+  },
+  {
+   "id": "t-skill-fail",
+   "tajuk": "Skill dokumen: pptx, docx, xlsx, pdf",
+   "kategori": "skill",
+   "ringkasan": "Skill rasmi Anthropic untuk membina dan membaca fail PowerPoint, Word, Excel dan PDF. Ia digunakan secara automatik apabila anda menyebut format fail itu.",
+   "langkah": [
+    "Minta dengan menyebut format: 'buat fail PowerPoint …' atau 'baca jadual dalam PDF ini'.",
+    "Jika tidak menyebut format, Claude mungkin membina dokumen atau slaid dalam Claude sendiri (boleh dimuat turun kemudian)."
+   ],
+   "kataKunci": [
+    "pptx",
+    "docx",
+    "xlsx",
+    "pdf"
+   ],
+   "sumber": [
+    {
+     "jenis": "web",
+     "nama": "anthropics/skills (GitHub)",
+     "url": "https://github.com/anthropics/skills"
+    }
+   ],
+   "tarikh": "2026-11-21",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-frontend",
+   "tajuk": "Frontend Design: rupa halaman yang lebih kemas",
+   "kategori": "skill",
+   "ringkasan": "Skill rasmi Anthropic yang memberi panduan tipografi, susun atur dan kontras warna semasa membina halaman atau aplikasi web.",
+   "langkah": [
+    "Semasa meminta halaman HTML, sebut gaya atau suasana yang dimahukan.",
+    "Minta semakan kontras warna untuk paparan telefon."
+   ],
+   "kataKunci": [
+    "frontend-design",
+    "reka bentuk",
+    "UI"
+   ],
+   "sumber": [
+    {
+     "jenis": "web",
+     "nama": "DEV: I tried 100 Claude skills",
+     "url": "https://dev.to/suraj_khaitan_f893c243958/i-tried-100-claude-skills-these-are-the-best-1m4a"
+    }
+   ],
+   "tarikh": "2026-11-21",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-webapp-testing",
+   "tajuk": "Webapp Testing: uji halaman seperti pengguna sebenar",
+   "kategori": "skill",
+   "ringkasan": "Skill yang menggunakan pelayar automatik (Playwright) untuk membuka halaman, menekan butang dan mengambil tangkapan skrin. Kaedah yang sama digunakan untuk menguji modul T5.",
+   "langkah": [
+    "Selepas Claude membina halaman, minta: 'uji halaman ini pada skrin telefon 360 px dan laporkan ralat'."
+   ],
+   "kataKunci": [
+    "webapp-testing",
+    "Playwright",
+    "ujian"
+   ],
+   "sumber": [
+    {
+     "jenis": "web",
+     "nama": "DEV: I tried 100 Claude skills",
+     "url": "https://dev.to/suraj_khaitan_f893c243958/i-tried-100-claude-skills-these-are-the-best-1m4a"
+    }
+   ],
+   "tarikh": "2026-11-21",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-superpowers",
+   "tajuk": "Superpowers: disiplin pembangun untuk Claude Code",
+   "kategori": "code",
+   "ringkasan": "Koleksi skill oleh Jesse Vincent (obra) untuk Claude Code: brainstorming, pelan berperingkat, test-driven development, penyahpepijatan sistematik dan semakan oleh sub-agent. Kebanyakannya untuk pengaturcara.",
+   "langkah": [
+    "Pertimbangkan hanya jika anda beralih ke Claude Code untuk projek modul yang besar.",
+    "Mulakan dengan bahagian brainstorming dan systematic debugging."
+   ],
+   "kataKunci": [
+    "Superpowers",
+    "obra",
+    "TDD",
+    "debugging"
+   ],
+   "sumber": [
+    {
+     "jenis": "web",
+     "nama": "Claude Plugins: Superpowers",
+     "url": "https://claude.com/plugins/superpowers"
+    }
+   ],
+   "tarikh": "2026-11-21",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-skill-selamat",
+   "tajuk": "Pasang skill komuniti dari sumber yang dipercayai sahaja",
+   "kategori": "skill",
+   "ringkasan": "Skill komuniti dibina oleh individu, bukan Anthropic, dan sesetengahnya boleh menjalankan kod. Pilih repo yang dikenali ramai dan baca SKILL.md sebelum memasang.",
+   "langkah": [
+    "Semak bilangan pemasangan atau bintang GitHub sesuatu skill.",
+    "Minta Claude membaca dan meringkaskan SKILL.md sebelum anda memasangnya."
+   ],
+   "kataKunci": [
+    "keselamatan",
+    "skill komuniti"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude, 21 Nov 2026"
+    }
+   ],
+   "tarikh": "2026-11-21",
+   "semakan": "amalan"
+  },
+  {
+   "id": "t-artifact-share",
+   "tajuk": "Artifact peribadi secara lalai; kongsi melalui menu Share",
+   "kategori": "artifact",
+   "ringkasan": "Halaman yang dibina Claude (artifact) mempunyai pautan sendiri tetapi hanya boleh dibuka oleh anda sehingga anda berkongsi melalui menu Share pada halaman itu.",
+   "langkah": [
+    "Buka artifact, tekan Share, pilih siapa yang boleh melihat.",
+    "Untuk mesyuarat, kongsi akses baca sahaja."
+   ],
+   "kataKunci": [
+    "artifact",
+    "kongsi",
+    "pautan"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude, 17 Nov 2026"
+    }
+   ],
+   "tarikh": "2026-11-17",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-subagent",
+   "tajuk": "Pasukan sub-agent untuk kerja besar",
+   "kategori": "agent",
+   "ringkasan": "Claude boleh melancarkan sub-agent yang diberi peranan berasingan, contohnya penggubal, penyemak bebas dan penguji. Penyemak yang tidak melihat skema lebih mudah mengesan kesilapan, tetapi setiap agent menggunakan kuota.",
+   "langkah": [
+    "Guna untuk kerja besar sahaja, contohnya bab baharu atau semakan akhir.",
+    "Minta secara jelas: 'guna sub-agent penyemak yang tidak melihat skema'."
+   ],
+   "kataKunci": [
+    "sub-agent",
+    "penyemak bebas",
+    "agent"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude, 17 Nov 2026"
+    }
+   ],
+   "tarikh": "2026-11-17",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-pejabat-maya",
+   "tajuk": "Pejabat maya agent hanyalah lapisan visual",
+   "kategori": "agent",
+   "ringkasan": "Paparan seperti 'Agent Hub' (agent sebagai watak piksel dalam pejabat) ialah papan pemuka buatan sendiri di atas agent biasa. Ia menarik untuk demonstrasi tetapi tidak menjadikan agent lebih pandai.",
+   "langkah": [
+    "Buka halaman simulasi 'Pejabat Panitia Matematik' dalam galeri artifact anda.",
+    "Guna untuk taklimat tentang cara agent bekerja."
+   ],
+   "kataKunci": [
+    "Agent Hub",
+    "pejabat maya",
+    "visualisasi"
+   ],
+   "sumber": [
+    {
+     "jenis": "threads",
+     "nama": "tgizzat_"
+    },
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude, 17 Nov 2026"
+    }
+   ],
+   "tarikh": "2026-08-29",
+   "semakan": "sah",
+   "statusAwal": "cuba"
+  },
+  {
+   "id": "t-jadual",
+   "tajuk": "Tugasan berjadual untuk kerja berulang",
+   "kategori": "agent",
+   "ringkasan": "Claude boleh menetapkan tugasan yang berjalan pada masa tertentu, contohnya peringatan mingguan atau penyediaan soalan latihan setiap Isnin.",
+   "langkah": [
+    "Minta: 'setiap Sabtu jam 8.30 malam, ingatkan saya untuk …'.",
+    "Semak tetapan kelulusan tugasan itu selepas dicipta."
+   ],
+   "kataKunci": [
+    "tugasan berjadual",
+    "scheduled task",
+    "peringatan"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude, 21 Nov 2026"
+    }
+   ],
+   "tarikh": "2026-11-21",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-prompt-panjang",
+   "tajuk": "Prompt yang sangat panjang menjadi lampiran",
+   "kategori": "prompt",
+   "ringkasan": "Teks yang sangat panjang (sekitar 3 800 aksara ke atas) yang ditampal ke kotak mesej boleh bertukar menjadi lampiran yang tidak boleh disunting. Had sebenar mungkin berbeza mengikut aplikasi.",
+   "langkah": [
+    "Simpan arahan panjang sebagai fail .txt dan muat naik.",
+    "Atau pecahkan kepada prompt yang lebih pendek."
+   ],
+   "kataKunci": [
+    "lampiran",
+    "prompt panjang"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Pengalaman projek Modul T5"
+    }
+   ],
+   "tarikh": "2026-11-12",
+   "semakan": "belum"
+  },
+  {
+   "id": "t-pilihan",
+   "tajuk": "Tetapkan pilihan peribadi supaya Claude sentiasa ikut gaya anda",
+   "kategori": "prompt",
+   "ringkasan": "Pilihan peribadi (personal preferences) dalam tetapan dibaca dalam setiap chat. Contohnya bahasa jawapan atau rutin seperti quote motivasi pada permulaan sesi.",
+   "langkah": [
+    "Buka tetapan profil dan isi bahagian pilihan peribadi.",
+    "Tulis arahan pendek dan jelas; elakkan senarai panjang."
+   ],
+   "kataKunci": [
+    "personal preferences",
+    "tetapan",
+    "gaya jawapan"
+   ],
+   "sumber": [
+    {
+     "jenis": "claude",
+     "nama": "Perbualan dengan Claude"
+    }
+   ],
+   "tarikh": "2026-11-21",
+   "semakan": "sah",
+   "statusAwal": "berguna"
+  },
+  {
+   "id": "t-grok-imagine",
+   "tajuk": "Grok Imagine untuk video AI",
+   "kategori": "lain",
+   "ringkasan": "Penjana video AI daripada xAI yang dipromosikan di Threads. Bukan sebahagian daripada Claude; disimpan sebagai rujukan sahaja.",
+   "langkah": [
+    "Bandingkan dengan keperluan sebenar sebelum mendaftar perkhidmatan berbayar."
+   ],
+   "kataKunci": [
+    "Grok",
+    "video AI",
+    "xAI"
+   ],
+   "sumber": [
+    {
+     "jenis": "threads",
+     "nama": "tranmautritam"
+    }
+   ],
+   "tarikh": "",
+   "semakan": "belum"
+  }
+ ]
+}

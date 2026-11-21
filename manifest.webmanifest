@@ -1,0 +1,29 @@
+{
+  "name": "Perpustakaan Tips Claude",
+  "short_name": "Tips Claude",
+  "description": "Koleksi tips penggunaan Claude dari Threads, disusun, disemak dan dijejak.",
+  "lang": "ms",
+  "id": "./",
+  "start_url": "./#fokus",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#dde4e0",
+  "theme_color": "#183e34",
+  "icons": [
+    { "src": "ikon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "ikon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "ikon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "share_target": {
+    "action": "./kongsi",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [ { "name": "gambar", "accept": ["image/*"] } ]
+    }
+  }
+}
