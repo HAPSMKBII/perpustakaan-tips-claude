@@ -1,5 +1,5 @@
 {
- "versi": "2026-11-21",
+ "versi": "2026-11-21.2",
  "dikemaskini": "2026-11-21",
  "kategori": [
   {
@@ -51,11 +51,11 @@
  "fokus": {
   "minggu": "2026-11-21",
   "ids": [
+   "t-muat-naik-skill",
    "t-humanizer",
-   "t-handoff",
-   "t-satu-chat"
+   "t-papan-pemuka"
   ],
-  "nota": "Minggu pertama: cuba dua skill penulisan dan amalkan satu chat satu tugasan untuk kerja modul."
+  "nota": "Pasang Humanizer melalui muat naik ZIP dan cuba pada satu teks, kemudian bina papan pemuka harian untuk tugasan sekolah."
  },
  "tips": [
   {
@@ -253,7 +253,8 @@
    "ringkasan": "Skill humanizer (blader) menulis semula teks supaya tidak berbunyi seperti AI: membuang perkataan klise, gaya promosi dan format mekanikal. Berasaskan panduan Wikipedia 'Signs of AI writing'. Paling berkesan untuk teks Inggeris.",
    "langkah": [
     "Tampal satu perenggan laporan atau postingan, kemudian minta: 'guna humanizer pada teks ini'.",
-    "Bandingkan sebelum dan selepas; semak sama ada makna asal kekal."
+    "Bandingkan sebelum dan selepas; semak sama ada makna asal kekal.",
+    "Untuk memasangnya tanpa Claude Code, lihat tip 'Pasang skill sendiri dengan memuat naik fail ZIP'."
    ],
    "kataKunci": [
     "humanizer",
@@ -265,6 +266,10 @@
      "jenis": "web",
      "nama": "blader/humanizer",
      "url": "https://docsearch.algolia.com/mcp/docs/repo/blader/humanizer"
+    },
+    {
+     "jenis": "threads",
+     "nama": "andy_snare"
     }
    ],
    "tarikh": "2026-11-21",
@@ -386,10 +391,72 @@
      "jenis": "web",
      "nama": "Claude Plugins: Superpowers",
      "url": "https://claude.com/plugins/superpowers"
+    },
+    {
+     "jenis": "web",
+     "nama": "Claude Help Center: Browse skills, connectors, and plugins in one directory",
+     "url": "https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory"
     }
    ],
    "tarikh": "2026-11-21",
    "semakan": "sah"
+  },
+  {
+   "id": "t-remote-control",
+   "tajuk": "Arahkan Claude Code di komputer dari telefon (Remote Control)",
+   "kategori": "code",
+   "ringkasan": "Remote Control menyambungkan aplikasi Claude di telefon kepada sesi Claude Code yang sedang berjalan di komputer anda, contohnya untuk menyusun fail yang berselerak dalam folder. Ia memerlukan pelan Pro, Max, Team atau Enterprise, dan komputer mesti terus hidup.",
+   "langkah": [
+    "Di komputer, jalankan 'claude --remote-control' (atau taip /rc dalam sesi yang sedang berjalan).",
+    "Buka sesi itu dalam aplikasi Claude di telefon dan beri arahan seperti biasa.",
+    "Jangan biarkan komputer tidur semasa kerja sedang dijalankan."
+   ],
+   "kataKunci": [
+    "Remote Control",
+    "/rc",
+    "Claude Code",
+    "telefon"
+   ],
+   "sumber": [
+    {
+     "jenis": "threads",
+     "nama": "atiq_syirazi"
+    },
+    {
+     "jenis": "web",
+     "nama": "Claude Code Docs: Remote Control",
+     "url": "https://code.claude.com/docs/en/remote-control"
+    }
+   ],
+   "tarikh": "",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-claude-code-lanjutan",
+   "tajuk": "Lima amalan pengguna Claude Code yang serius",
+   "kategori": "code",
+   "ringkasan": "Cadangan seorang pengguna Threads: sambung perkhidmatan melalui API dan bukannya bergantung pada connector (MCP), guna Claude melalui terminal (CLI), sambung peranti lain melalui SSH, panggil model lain seperti Codex CLI dari dalam Claude Code, dan cuba Tailscale serta T3 Code. Kebanyakannya untuk pengaturcara, bukan keperluan harian guru.",
+   "langkah": [
+    "Simpan sebagai rujukan jika anda mula membina projek besar dengan Claude Code.",
+    "Mulakan dengan satu perkara sahaja, contohnya memasang Claude Code CLI di komputer."
+   ],
+   "kataKunci": [
+    "Claude Code CLI",
+    "API",
+    "MCP",
+    "SSH",
+    "Tailscale",
+    "T3 Code",
+    "Codex CLI"
+   ],
+   "sumber": [
+    {
+     "jenis": "threads",
+     "nama": "hamiddi_"
+    }
+   ],
+   "tarikh": "",
+   "semakan": "amalan"
   },
   {
    "id": "t-skill-selamat",
@@ -414,6 +481,64 @@
    "semakan": "amalan"
   },
   {
+   "id": "t-muat-naik-skill",
+   "tajuk": "Pasang skill sendiri dengan memuat naik fail ZIP",
+   "kategori": "skill",
+   "ringkasan": "Skill komuniti seperti Humanizer boleh dipasang terus di claude.ai atau aplikasi desktop tanpa Claude Code. Folder skill (yang mengandungi SKILL.md) perlu dibungkus sebagai fail ZIP, dan nama folder mesti sama dengan nama skill. Ciri ini tersedia juga untuk pelan Free.",
+   "langkah": [
+    "Pastikan ciri kod (code execution) dihidupkan: Settings > Capabilities > 'Create and edit files'.",
+    "Muat turun folder skill dari sumber yang dipercayai, kemudian mampatkan folder itu menjadi ZIP.",
+    "Buka Customize > Skills, tekan '+', pilih '+ Create skill' > 'Upload a skill', dan muat naik ZIP itu.",
+    "Uji dengan meminta Claude menggunakan skill itu dalam chat baharu."
+   ],
+   "kataKunci": [
+    "muat naik skill (upload a skill)",
+    "SKILL.md",
+    "ZIP",
+    "Humanizer"
+   ],
+   "sumber": [
+    {
+     "jenis": "threads",
+     "nama": "andy_snare"
+    },
+    {
+     "jenis": "web",
+     "nama": "Claude Help Center: Use skills in Claude",
+     "url": "https://support.claude.com/en/articles/12512180-use-skills-in-claude"
+    }
+   ],
+   "tarikh": "",
+   "semakan": "sah"
+  },
+  {
+   "id": "t-direktori",
+   "tajuk": "Cari skill, connector dan plugin dalam satu direktori",
+   "kategori": "skill",
+   "ringkasan": "Aplikasi Claude mempunyai direktori untuk melayari skill, connector dan plugin (contohnya Superpowers dan frontend-design). Ia dibuka melalui menu Customize di bar sisi; sesetengah versi aplikasi memaparkannya sebagai 'Plugins' dengan penapis Connectors dan Skills.",
+   "langkah": [
+    "Klik Customize (atau Plugins) di bar sisi kiri.",
+    "Pilih tab Skills, Connectors atau Plugins, kemudian buka 'Discover'.",
+    "Pilih item, baca keterangannya, kemudian tekan 'Add'.",
+    "Skill dari GitHub yang tiada dalam direktori perlu dimuat naik sendiri sebagai ZIP."
+   ],
+   "kataKunci": [
+    "direktori (directory)",
+    "plugin",
+    "Customize",
+    "Discover"
+   ],
+   "sumber": [
+    {
+     "jenis": "web",
+     "nama": "Claude Help Center: Browse skills, connectors, and plugins in one directory",
+     "url": "https://support.claude.com/en/articles/14328846-browse-skills-connectors-and-plugins-in-one-directory"
+    }
+   ],
+   "tarikh": "",
+   "semakan": "sah"
+  },
+  {
    "id": "t-artifact-share",
    "tajuk": "Artifact peribadi secara lalai; kongsi melalui menu Share",
    "kategori": "artifact",
@@ -435,6 +560,35 @@
    ],
    "tarikh": "2026-11-17",
    "semakan": "sah"
+  },
+  {
+   "id": "t-papan-pemuka",
+   "tajuk": "Bina papan pemuka harian peribadi sebagai artifact",
+   "kategori": "artifact",
+   "ringkasan": "Pengguna Threads membina 'command center' peribadi dengan Claude: ucapan harian, kiraan hari ke matlamat, senarai tugasan dan rutin pagi/petang dalam satu halaman. Bagi guru, idea yang sama boleh menjadi papan pemuka tugasan sekolah dan sasaran mingguan.",
+   "langkah": [
+    "Minta: 'Bina papan pemuka harian untuk saya: tarikh hari ini, tugasan mengikut tarikh akhir, rutin pagi dan petang, serta kiraan hari ke peperiksaan.'",
+    "Minta supaya tugasan dan tanda siap disimpan, supaya kekal selepas halaman dibuka semula.",
+    "Buka papan pemuka itu setiap pagi; minta Claude menambah bahagian baharu apabila perlu."
+   ],
+   "kataKunci": [
+    "papan pemuka (dashboard)",
+    "command center",
+    "senarai tugasan",
+    "rutin"
+   ],
+   "sumber": [
+    {
+     "jenis": "threads",
+     "nama": "ashleyshontea"
+    },
+    {
+     "jenis": "threads",
+     "nama": "pretty_financial"
+    }
+   ],
+   "tarikh": "",
+   "semakan": "amalan"
   },
   {
    "id": "t-subagent",
@@ -577,6 +731,35 @@
    ],
    "tarikh": "",
    "semakan": "belum"
+  },
+  {
+   "id": "t-github-docker",
+   "tajuk": "GitHub dan Docker untuk hos sendiri secara percuma",
+   "kategori": "lain",
+   "ringkasan": "GitHub menyimpan kod dan menjalankan GitHub Actions untuk membina imej Docker secara automatik, manakala GitHub Container Registry menyimpan imej itu. Actions dan pakej adalah percuma untuk repo awam; repo peribadi pada pelan Free hanya mendapat kuota bulanan terhad.",
+   "langkah": [
+    "Gunakan repo awam jika projek tidak mengandungi data sulit (seperti repo tips ini).",
+    "Minta Claude menulis fail aliran kerja (workflow) GitHub Actions jika anda perlukan binaan automatik."
+   ],
+   "kataKunci": [
+    "GitHub Actions",
+    "Docker",
+    "GitHub Container Registry",
+    "hos sendiri (self-host)"
+   ],
+   "sumber": [
+    {
+     "jenis": "threads",
+     "nama": "atiq_syirazi"
+    },
+    {
+     "jenis": "web",
+     "nama": "GitHub Docs: GitHub Actions billing",
+     "url": "https://docs.github.com/en/billing/concepts/product-billing/github-actions"
+    }
+   ],
+   "tarikh": "",
+   "semakan": "sah"
   }
  ]
 }
